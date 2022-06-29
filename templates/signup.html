@@ -19,7 +19,7 @@
   </div>
   <div class="content">
     <div class="form">
-      <div class="topform" style="background-image: url({{url_for('static', filename='img/Autentification/rectangle.svg')}})">
+      <div class="topform">
         <h1>
           Регистрация
         </h1>
@@ -42,28 +42,23 @@
             <span class="checkbox"></span>
             <h2 id="remembermetext">Запомнить меня?</h2>
           </label>
+          <h3 id="inftext"></h3>
+          <input type="submit" class="button" value="Зарегистрироваться">
         </form>
       </div>
-      <div class="bottomform" id="bottomform" style="background-image: url({{url_for('static', filename='img/Autentification/rectangle.svg')}})">
-        
-        <div class="button" id="button">
-          Зарегистрироваться
-        </div>
-        <h3 id="inftext"></h3>
         <script>
           let inftext = document.getElementById("inftext")
           let rememberme = document.getElementById("remembermetext")
           let button = document.getElementById("button")
-          let bottomform = document.getElementById("bottomform")
           let form = document.getElementById("form")
 
           rememberme.onclick = function(e){
-            if (bottomform.style.marginTop=="-382px") {
-              bottomform.style.marginTop="-464px"
+            if (inftext.textContent!="") {
+              inftext.style.marginTop = "0"
               inftext.textContent=""
               return
             }
-            bottomform.style.marginTop="-382px"
+            inftext.style.marginTop = "32px"
             inftext.textContent="При следующем посещении сайта, вам не придётся снова авторизовываться."
           }
 

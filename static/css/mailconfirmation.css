@@ -97,8 +97,7 @@ canvas {
 
 .content .form .topform {
     z-index: 5;
-    min-width: 621px;
-    min-height: 435px;
+    width: 621px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,27 +116,14 @@ h1 {
 
 h2 {
     font-weight: 400;
+    max-width: 80%;
+    text-align: center;
     padding: 0;
     margin: 0;
     font-size: 22px;
     color: var(--h2);
     z-index: 3;
     margin-top: 32px;
-}
-
-h4 {
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
-    font-size: 22px;
-    color: var(--h2);
-    z-index: 3;
-}
-
-
-h2 .secondpart {
-    margin-top: 100px;
-
 }
 
 form {
@@ -147,7 +133,6 @@ form {
     flex-direction: column;
     align-items: flex-start;
     width: 486px;
-    height: 120px;
 }
 
 form h2 {
@@ -161,7 +146,7 @@ form h2 {
 input[type="text"] {
     border: 2.21px solid var(--h2);
     border-radius: 15px;
-    width: 486px;
+    width: calc(100% - 24px);
     height: 76px;
     margin-top: 6px;
     font-size: 28px;
@@ -177,6 +162,7 @@ input[type="text"]:focus {
 
 
 .button {
+    border: 0;
     font-size: 28.74px;
     color: var(--light-dominant-color);
     border-radius: 15px;
@@ -187,6 +173,7 @@ input[type="text"]:focus {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: 34px 0 34px 0;
 }
 
 h3 {
@@ -208,4 +195,9 @@ h3 {
 
 .message {
     color: var(--message-color);
+}
+
+.topform {
+    background-color: var(--light-dominant-color);
+    border-radius: 34px;
 }
