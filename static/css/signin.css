@@ -308,3 +308,13 @@ a {
 .message {
     color: var(--message-color);
 }
+
+
+.topform {
+    background-color: var(--light-dominant-color);
+    border-radius: 34px;
+}
+
+.remembermetext {
+    width: auto;
+}

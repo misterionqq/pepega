@@ -98,28 +98,18 @@ canvas {
 .content .form .topform {
     z-index: 5;
     min-width: 621px;
-    min-height: 548px;
+    min-height: 435px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-.content .form .bottomform {
-    margin-top: -464px;
-    z-index: 1;
-    width: 621px;
-    height: 548px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    
-}
 
 h1 {
     padding: 0;
     margin: 0;
-    font-size: 55px;
+    font-size: 44px;
     color: var(--dark-dominant-color);
     z-index: 3;
     margin-top: 35px;
@@ -127,8 +117,6 @@ h1 {
 
 h2 {
     font-weight: 400;
-    max-width: 80%;
-    text-align: center;
     padding: 0;
     margin: 0;
     font-size: 22px;
@@ -137,12 +125,29 @@ h2 {
     margin-top: 32px;
 }
 
+h4 {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    color: var(--h2);
+    z-index: 3;
+}
+
+
+h2 .secondpart {
+    margin-top: 100px;
+
+}
+
 form {
+    margin-top: 20px;
     z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 486px;
+    height: 120px;
 }
 
 form h2 {
@@ -153,10 +158,10 @@ form h2 {
 }
 
 
-input[type="password"] {
+input[type="text"] {
     border: 2.21px solid var(--h2);
     border-radius: 15px;
-    width: calc(100% - 24px);
+    width: 486px;
     height: 76px;
     margin-top: 6px;
     font-size: 28px;
@@ -166,31 +171,12 @@ input[type="password"] {
     background-color: var(--h1);
 }
 
-input[type="password"]:focus {
-    border: 2.21px solid var(--highlight-color);
-}
-
-
-input[type="email"] {
-    border: 2.21px solid var(--h2);
-    border-radius: 15px;
-    width: calc(100% - 24px);
-    height: 76px;
-    margin-top: 6px;
-    font-size: 28px;
-    padding-left: 12px;
-    padding-right: 12px;
-    color: var(--highlight-color);
-    background-color: var(--h1);
-}
-
-input[type="email"]:focus {
+input[type="text"]:focus {
     border: 2.21px solid var(--highlight-color);
 }
 
 
 .button {
-    border: 0;
     font-size: 28.74px;
     color: var(--light-dominant-color);
     border-radius: 15px;
@@ -201,7 +187,6 @@ input[type="email"]:focus {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin: 34px 0 34px 0;
 }
 
 h3 {
@@ -224,6 +209,7 @@ h3 {
 .message {
     color: var(--message-color);
 }
+
 
 .topform {
     background-color: var(--light-dominant-color);

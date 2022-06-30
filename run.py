@@ -1,4 +1,4 @@
-from crypt import methods
+
 from flask import Flask, render_template, request, flash
 import flask
 from config import *
@@ -28,6 +28,14 @@ def sign_up_route():
         return render_template("enterbycode.html")
 
 
+@app.route('/enterbymail', methods=("GET", "POST"))
+def enter_by_mail_route():
+    if request.method == "POST":    
+        return f"form: {request.form}"
+    elif request.method == "GET":
+        return render_template("enterbymail.html")
+
+
 @app.route('/mailconfirmation', methods=("GET", "POST"))
 def sign_in_route():
     if request.method == "POST":
@@ -38,7 +46,7 @@ def sign_in_route():
         return render_template("mailconfirmation.html")
 
 
-@app.route('/password_change', methods=("GET", "POST"))
+@app.route('/passwordchange', methods=("GET", "POST"))
 def pass_change_route():
     if request.method == "GET":
         return render_template("passwordchange.html")
