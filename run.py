@@ -17,44 +17,52 @@ def main_route(s):
 def auth_route(s):
     if request.method == "POST":
         flash("Message"+" mes"*25, "error")
+    return render_template("authform.html", form=authforms[s])
+    #return render_template(s+".html")
+
+
+@app.route("/<s>", methods=("GET", "POST"))
+def auth1_route(s):
+    if request.method == "POST":
+        flash("Message"+" mes"*25, "error")
     return render_template(s+".html")
 
 
-@app.route('/enterbycode', methods=("GET", "POST"))
-def sign_up_route():
-    if request.method == "POST":    
-        return f"form: {request.form}"
-    elif request.method == "GET":
-        return render_template("enterbycode.html")
+# @app.route('/enterbycode', methods=("GET", "POST"))
+# def sign_up_route():
+#     if request.method == "POST":    
+#         return f"form: {request.form}"
+#     elif request.method == "GET":
+#         return render_template("enterbycode.html")
 
 
-@app.route('/enterbymail', methods=("GET", "POST"))
-def enter_by_mail_route():
-    if request.method == "POST":    
-        return f"form: {request.form}"
-    elif request.method == "GET":
-        return render_template("enterbymail.html")
+# @app.route('/enterbymail', methods=("GET", "POST"))
+# def enter_by_mail_route():
+#     if request.method == "POST":    
+#         return f"form: {request.form}"
+#     elif request.method == "GET":
+#         return render_template("enterbymail.html")
 
 
-@app.route('/mailconfirmation', methods=("GET", "POST"))
-def sign_in_route():
-    if request.method == "POST":
-        flash("Письмо отправленно к вам на почту", "error")
-        return render_template("mailconfirmation.html")
-        #return f"form: {request.form}"
-    elif request.method == "GET":
-        return render_template("mailconfirmation.html")
+# @app.route('/mailconfirmation', methods=("GET", "POST"))
+# def sign_in_route():
+#     if request.method == "POST":
+#         flash("Письмо отправленно к вам на почту", "error")
+#         return render_template("mailconfirmation.html")
+#         #return f"form: {request.form}"
+#     elif request.method == "GET":
+#         return render_template("mailconfirmation.html")
 
 
-@app.route('/passwordchange', methods=("GET", "POST"))
-def pass_change_route():
-    if request.method == "GET":
-        return render_template("passwordchange.html")
-    elif request.method == "POST":
-        flash("Messge mes"+" mes"*25, "error")
-        return render_template("passwordchange.html")
+# @app.route('/passwordchange', methods=("GET", "POST"))
+# def pass_change_route():
+#     if request.method == "GET":
+#         return render_template("passwordchange.html")
+#     elif request.method == "POST":
+#         flash("Messge mes"+" mes"*25, "error") q
+#         return render_template("passwordchange.html")
 
 
-app.debug = True
+#app.debug = True
 
 app.run("0.0.0.0") # pudge
