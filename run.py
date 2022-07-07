@@ -20,13 +20,19 @@ def auth_route(s):
     return render_template("authform.html", form=authforms[s])
     #return render_template(s+".html")
 
-
+'''
 @app.route("/<s>", methods=("GET", "POST"))
 def auth1_route(s):
     if request.method == "POST":
         flash("Message"+" mes"*25, "error")
-    return render_template(s+".html")
+    return render_template(s+".html")'''
 
+
+@app.route("/tracker", methods=("GET", "POST"))
+def tracker_route():
+    if request.method == "POST":
+        flash("Message"+" mes"*25, "error")
+    return render_template("trackerlists.html", sidebar_components=sidebar_components, current="main", url_for_sidebar_components=url_for_sidebar_components, content=content[s])
 
 # @app.route('/enterbycode', methods=("GET", "POST"))
 # def sign_up_route():
