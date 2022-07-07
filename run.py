@@ -71,4 +71,4 @@ def tracker_route():
 
 #app.debug = True
 
-app.run("0.0.0.0") # pudge
+app.run("0.0.0.0", port="80") # pudge
