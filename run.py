@@ -32,7 +32,7 @@ def auth1_route(s):
 def tracker_route():
     if request.method == "POST":
         flash("Message"+" mes"*25, "error")
-    return render_template("trackerlists.html", sidebar_components=sidebar_components, current="main", url_for_sidebar_components=url_for_sidebar_components, content=content[s])
+    return render_template("trackerlists.html", sidebar_components=sidebar_components, current="main", url_for_sidebar_components=url_for_sidebar_components)
 
 # @app.route('/enterbycode', methods=("GET", "POST"))
 # def sign_up_route():
