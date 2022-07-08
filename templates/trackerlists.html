@@ -50,8 +50,12 @@
                 </div>
 
                 <div class="playerbutton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                    <svg id="player" class="displaying" xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
                         <path d="M12 7.49989L0.75 14.8611L0.75 0.138672L12 7.49989Z" fill="#FEFEFE"/>
+                    </svg>
+                    <svg id="plus" class="hidden" xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110" fill="none">
+                        <rect x="110" y="43" width="25" height="110" transform="rotate(90 110 43)" fill="#FEFEFE"/>
+                        <rect x="67" y="110" width="25" height="110" transform="rotate(-180 67 110)" fill="#FEFEFE"/>
                     </svg>
                 </div>
 
@@ -77,8 +81,16 @@
         content.style.marginLeft = "50px"
     };
 
-    let topbutton = document.getElementById("topbutton")
-    let bottombutton = document.getElementById("bottombutton")
+    let topbutton = document.getElementById("topbutton");
+    let bottombutton = document.getElementById("bottombutton");
+    let tagbutton = document.getElementById("tagbutton");
+    let tagbuttonpath = document.getElementById("tagbuttonpath");
+    let billable = document.getElementById("billable");
+    let player = document.getElementById("player");
+    let plus = document.getElementById("plus");
+    let currentposition = 1;
+    const hidden = 'hidden';
+    const display = 'displaying'
 
     topbutton.style.background = "var(--dark-dominant-color)";
     bottombutton.style.background = "var(--h2)";
@@ -88,6 +100,29 @@
             topbutton.style.background = "var(--h2)";
             bottombutton.style.background = "var(--dark-dominant-color)";
         }
+        if (currentposition == 1){
+            currentposition = 2;
+            billable.style.transform=`translate(-76px,0)`;
+            tagbutton.style.transform=`translate(-76px,0)`;   
+        }
+        if (plus.classList.contains('hidden')){
+        // plus is hidden
+        // displaying
+        plus.classList.add(display);
+        plus.classList.remove(hidden);
+        // hiding
+        player.classList.add(hidden);
+        player.classList.remove(display);
+        }
+        else{
+        // player is hidden
+        // displaying
+        player.classList.add(display);
+        player.classList.remove(hidden);
+        // hiding
+        plus.classList.add(hidden);
+        plus.classList.remove(display);
+        }
     }
 
     topbutton.onclick = function(){
@@ -95,10 +130,31 @@
             bottombutton.style.background = "var(--h2)";
             topbutton.style.background = "var(--dark-dominant-color)";
         }
-    }
+        if (currentposition == 2){
+            currentposition = 1;
+            billable.style.transform=`translate(0,0)`;
+            tagbutton.style.transform=`translate(0,0)`; 
+        }
+        if (player.classList.contains('hidden')){
+        // plus is hidden
+        // displaying
+        player.classList.add(display);1
+        player.classList.remove(hidden);1
+        // hiding
+        plus.classList.add(hidden);
+        plus.classList.remove(display);
+        }
+        else{
+        // player is hidden
+        // displaying
+        plus.classList.add(display);
+        plus.classList.remove(hidden);
+        // hiding
+        player.classList.add(hidden);1
+        player.classList.remove(display);1
+        }
 
-    let tagbutton = document.getElementById("tagbutton");
-    let tagbuttonpath = document.getElementById("tagbuttonpath");
+    }
 
     tagbutton.onmouseover = function() {
         tagbuttonpath.style.fill = "var(--complement-color)";
@@ -107,8 +163,6 @@
     tagbutton.onmouseleave = function() {
         tagbuttonpath.style.fill = "var(--h2)";
     }
-
-    let billable = document.getElementById("billable");
 
     billable.onclick = function() {
         if (billable.style.color != "var(--complement-color)") {
