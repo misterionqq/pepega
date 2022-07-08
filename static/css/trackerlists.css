@@ -270,3 +270,10 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.15s ea
  .billable::-moz-selection {
     background: transparent;
  }
+
+ .timer::selection {
+    background: transparent;
+ }
+ .timer::-moz-selection {
+    background: transparent;
+ }
