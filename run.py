@@ -69,6 +69,6 @@ def tracker_route():
 #         return render_template("passwordchange.html")
 
 
-app.debug = 0
+app.debug = 1
 
 app.run("0.0.0.0", port="80") # pudge
