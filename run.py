@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, flash
 import flask
 from config import *
@@ -33,6 +32,7 @@ def tracker_route():
     if request.method == "POST":
         flash("Message"+" mes"*25, "error")
     return render_template("trackerlists.html", sidebar_components=sidebar_components, current="main", url_for_sidebar_components=url_for_sidebar_components)
+
 
 # @app.route('/enterbycode', methods=("GET", "POST"))
 # def sign_up_route():
@@ -69,6 +69,6 @@ def tracker_route():
 #         return render_template("passwordchange.html")
 
 
-app.debug = True
+app.debug = 0
 
 app.run("0.0.0.0", port="80") # pudge

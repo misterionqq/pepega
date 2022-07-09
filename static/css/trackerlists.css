@@ -260,6 +260,7 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.15s ea
     text-align: center;
     border-radius: 10px;
     border: solid 1px var(--complement-color);
+    width: 160px;
     padding: 10px 0;
 }
 
@@ -271,7 +272,7 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.15s ea
     color: var(--complement-color);
     border: none;
     width: fit-content;
-    max-width: 120px;
+    max-width: 140px;
     text-align: center;
     padding: 10px 0;
 }
